@@ -15,4 +15,13 @@ const fields = [
   { key: "benefits", label: "Benefici" }
 ];
 
+// funzione per gestione booleani/valori vuoti/ siffissi e formattazione valore campo selezionato
+function formatValue(food, field) {
+  const value = food[field.key];
+  if (field.boolean) return value ? "Sì" : "No";
+  if (value === undefined || value === null || value === "") return "-";
+  return `${value}${field.suffix || ""}`;
+}
+
+
 
