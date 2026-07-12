@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import { getFoodById } from "../api/foods";
+import { getFoodById } from "../api/foods.js";
 
 const CompareContext = createContext();
 
