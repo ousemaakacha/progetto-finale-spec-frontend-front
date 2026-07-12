@@ -21,4 +21,20 @@ function DetailPage(){
         loadFood();
 
     }, [id]);
+
+    // rendering condizionale se il cibo non esiste o vi e' un errore di caricamneto
+    if (error) {
+    return (
+      <div className="alert alert-danger">
+        {error} <Link to="/" className="alert-link">Torna alla lista</Link>
+      </div>
+    );}
+
+    if (!food) {
+    return (
+      <div className="alert alert-warning">
+        Nessun alimento trovato
+      </div>
+    );
+    }
 }
