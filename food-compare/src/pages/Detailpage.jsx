@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getFoodById } from "../api/foods.js";
+import CompareButton from "../components/CompareButton.jsx";
+import FavoriteButton from "../components/FavoriteButton.jsx";
 
 function DetailPage(){
     const { id } = useParams();
-    const [food, setFoods] = useState(null);
+    const [food, setFood] = useState(null);
     const [error, setError] = useState("");
 
     // caricamento dettaglio cibo tramite id 
